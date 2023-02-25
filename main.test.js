@@ -1,5 +1,5 @@
 import expect from "expect";
-import { capitalize, reverseString, calculator, caesarCipher } from "./main";
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./main";
 
 test('Capitalize the string', () => {
   expect(capitalize("aBc")).toBe("Abc");
@@ -34,4 +34,9 @@ test('Multiply numbers', () => {
 
 test('Caesar', () => {
   expect(caesarCipher("aBc,.-XyZ", 2)).toBe("cDe,.-ZaB");
+})
+
+
+test('Analyze', () => {
+  expect(analyzeArray([1, 2, 3, 4])).toEqual({average: 2.5, min: 1, max: 4, length: 4})
 })

@@ -46,3 +46,17 @@ export function caesarCipher(str, shiftFactor) {
 
   return newStr;
 }
+
+export function analyzeArray(arr) {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const length = arr.length;
+  const average = arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
+
+  return {
+    average,
+    min,
+    max,
+    length
+  }
+}
