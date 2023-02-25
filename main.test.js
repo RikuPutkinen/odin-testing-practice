@@ -1,13 +1,15 @@
 import expect from "expect";
-import { capitalize, reverseString, calculator } from "./main";
+import { capitalize, reverseString, calculator, caesarCipher } from "./main";
 
 test('Capitalize the string', () => {
   expect(capitalize("aBc")).toBe("Abc");
 });
 
+
 test('Reverse the string', () => {
   expect(reverseString("abc")).toBe("cba");
 });
+
 
 test('Add numbers', () => {
   expect(calculator.add(1, 2)).toBe(3);
@@ -28,3 +30,8 @@ test('Divide with zero', () => {
 test('Multiply numbers', () => {
   expect(calculator.multiply(5, 2)).toBe(10);
 });
+
+
+test('Caesar', () => {
+  expect(caesarCipher("aBc,.-XyZ", 2)).toBe("cDe,.-ZaB");
+})

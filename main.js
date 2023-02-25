@@ -24,3 +24,25 @@ export const calculator = {
     return a * b;
   }
 }
+
+export function caesarCipher(str, shiftFactor) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    let charCode = str.charCodeAt(i);
+    let newCharCode;
+
+    if (97 <= charCode && charCode <= 122) {
+      newCharCode = (charCode + shiftFactor);
+      if (newCharCode > 122) newCharCode -= 26;
+    }
+    else if (65 <= charCode && charCode <= 90) {
+      newCharCode = (charCode + shiftFactor);
+      if (newCharCode > 90) newCharCode -= 26;
+    }
+    else newCharCode = charCode;
+
+    newStr += String.fromCharCode(newCharCode);
+  }
+
+  return newStr;
+}
